@@ -1,0 +1,27 @@
+digraph {
+	subgraph cluster_1{
+		label = "Donjon de Naheulbeuk";
+		PLACE_2 [ label = "Entrée principale" ];
+		PLACE_3 [ label = "Arrière du donjon" ];
+		subgraph cluster_7{
+			label = "Etage 1";
+			PLACE_4 [ label = "Grand Hall" ];
+		}
+		subgraph cluster_8{
+			label = "Etage 2";
+			PLACE_5 [ label = "Manoir du Boss" ];
+		}
+	}
+	PLACE_6 [ label = "Valtordu" ];
+
+
+	PLACE_2 -> PLACE_6 [ label = "Se rendre à Valtordu" ];
+	PLACE_6 -> PLACE_2 [ label = "Aller au Donjon de Naheulbeuk" ];
+	PLACE_2 -> PLACE_3 [ label = "Aller à l'arrière du donjon" ];
+	PLACE_3 -> PLACE_2 [ label = "Aller à l'entrée principale" ];
+	PLACE_2 -> PLACE_4 [ label = "Entrer dans le donjon" ];
+	PLACE_4 -> PLACE_2 [ label = "Sortir du donjon" ];
+	PLACE_4 -> PLACE_5 [ label = "Monter les escaliers" ];
+	PLACE_5 -> PLACE_4 [ label = "Descendre les escaliers" ];
+	PLACE_3 -> PLACE_5 [ label = "Prendre le passage secret" ];
+}
